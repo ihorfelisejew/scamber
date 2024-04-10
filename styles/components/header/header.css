@@ -58,18 +58,22 @@ header .content .header__menu-block .menu__list .menu__link.menu__active::before
   transform: scaleX(1);
 }
 header .content .header__contacts {
-  background-color: #1b22cd;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   gap: 25px;
+}
+header .content .header__contacts.contacts__item-white {
+  color: #fff;
+}
+header .content .header__contacts.contacts__item-black {
+  color: #000;
 }
 header .content .header__contacts .header__contacts-item {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 3px;
-  color: #fff;
 }
 header .content .header__contacts .header__contacts-item .header__contact-text {
   font-size: 15px;

@@ -7,7 +7,7 @@ import { LocationArrowIcon } from "./images/location-arrow-icon";
 
 export function Header({ className }) {
   return (
-    <header className={clsx(className, "")}>
+    <header>
       <div className="header__container">
         <div className="content">
           <div className="logo">
@@ -43,7 +43,7 @@ export function Header({ className }) {
               </li>
             </ul>
           </nav>
-          <div class="header__contacts">
+          <div class={clsx("header__contacts", className)}>
             <div class="header__contacts-item">
               <PhoneIcon />
               <a href="tel:+380681543521" class="header__contact-text">
