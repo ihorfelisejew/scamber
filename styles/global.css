@@ -68,5 +68,12 @@ body {
     border: 2px solid #1b22d0;
 }
 
+.title {
+    color: #000;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 900;
+}
+
 @import "components/header/header.css";
-@import "components/main/main.css";
+@import "components/main-page/main-page.css";

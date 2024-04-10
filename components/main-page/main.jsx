@@ -1,6 +1,5 @@
 import Image from "next/image";
 import carSrc from "./main_car.png";
-import { UiButton } from "../uikit/ui-button";
 
 export function Main() {
   return (

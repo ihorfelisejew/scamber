@@ -83,3 +83,78 @@
         }
     }
 }
+
+.about {
+    padding-top: 173px;
+
+    .about__title {
+        padding-bottom: 40px;
+    }
+
+    .about__description {
+        color: #000;
+        font-size: 20px;
+        font-weight: 400;
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    .about__statistics {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .statistic__item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 0px;
+
+            .statistic__title {
+                color: #1b22cd;
+                font-size: 90px;
+                font-weight: 600;
+            }
+
+            .statistic__text {
+                color: #8688b4;
+                text-align: center;
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .about__why-we {
+        padding: 75px 0px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        .why-we__item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+
+            .why-we__image {
+                width: 150px;
+                height: 150px;
+                background-color: #edeeff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+            }
+
+            .why-we__text {
+                color: #5f629c;
+                text-align: center;
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
+    }
+}
