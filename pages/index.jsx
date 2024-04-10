@@ -1,3 +1,4 @@
+import { Header } from "@/components/header";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 
@@ -15,15 +16,8 @@ export default function HomePage() {
       <Head>
         <title>Scamber</title>
       </Head>
-      <h2>List of Cars</h2>
-      <ul>
-        {cars.map((car) => (
-          <li key={car.car_id}>
-            <p>Car Model: {car.car_model}</p>
-            <p>Price: {car.price}</p>
-          </li>
-        ))}
-      </ul>
+
+      <Header className="text-white"></Header>
     </div>
   );
 }
