@@ -47,5 +47,26 @@ body {
     }
 }
 
+.blue__button {
+    width: 260px;
+    text-align: center;
+    border-radius: 10px;
+    background: linear-gradient(92deg, #1b22cd 0%, #1b22d0 100%);
+    box-shadow: 0px 4px 35px 0px rgba(54, 61, 224, 0.25);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    /* 166.667% */
+    color: #fff;
+    transition: all 2s ease 0s;
+}
+
+.blue__button:hover {
+    color: #1b22cd;
+    background: #fff;
+    border: 2px solid #1b22d0;
+}
+
 @import "components/header/header.css";
 @import "components/main/main.css";
