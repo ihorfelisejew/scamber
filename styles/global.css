@@ -1,79 +1,78 @@
+@import "components/header.css";
+@import "components/main-page.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 body {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
 }
 
 .wrapper {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow: clip;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-
-[class*="__container"] {
-    max-width: 1210px;
-    margin: 0 auto;
-    padding: 0px 15px;
+[class*=__container] {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
-
 @media (max-width: 1439.98px) {
-    [class*="__container"] {
-        max-width: 1130px;
-    }
+  [class*=__container] {
+    max-width: 1280px;
+  }
 }
-
 @media (max-width: 1280px) {
-    [class*="__container"] {
-        max-width: 1020px;
-    }
+  [class*=__container] {
+    max-width: 1120px;
+  }
 }
-
 @media (max-width: 1120px) {
-    [class*="__container"] {
-        max-width: 920px;
-    }
+  [class*=__container] {
+    max-width: 960px;
+  }
 }
-
 @media (max-width: 767.98px) {
-    [class*="__container"] {
-        padding: 0px 15px;
-        max-width: 100%;
-    }
+  [class*=__container] {
+    padding: 0 15px;
+    max-width: 100%;
+  }
 }
 
 .blue__button {
-    width: 260px;
-    text-align: center;
-    border-radius: 10px;
-    background: linear-gradient(92deg, #1b22cd 0%, #1b22d0 100%);
-    box-shadow: 0px 4px 35px 0px rgba(54, 61, 224, 0.25);
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 30px;
-    /* 166.667% */
-    color: #fff;
-    transition: all 2s ease 0s;
+  width: 260px;
+  text-align: center;
+  border-radius: 10px;
+  background: linear-gradient(92deg, #1b22cd 0%, #1b22d0 100%);
+  box-shadow: 0px 4px 35px 0px rgba(54, 61, 224, 0.25);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  color: #fff;
+  transition: all 2s ease 0s;
 }
-
 .blue__button:hover {
-    color: #1b22cd;
-    background: #fff;
-    border: 2px solid #1b22d0;
+  color: #1b22cd;
+  background: #fff;
+  border: 2px solid #1b22d0;
 }
 
 .title {
-    color: #000;
-    font-size: 35px;
-    font-style: normal;
-    font-weight: 900;
+  color: #000;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 900;
 }
 
-@import "components/header/header.css";
-@import "components/main-page/main-page.css";
+.form-email {
+  border: 1px solid black;
+}
+
+.form--email-input {
+  border: 1px solid black;
+}

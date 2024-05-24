@@ -1,4 +1,6 @@
-export function LocationArrowIcon() {
+import clsx from "clsx";
+
+export function LocationArrowIcon({ className }) {
   return (
     <svg
       width="15.000000"
@@ -6,6 +8,7 @@ export function LocationArrowIcon() {
       viewBox="0 0 15 9"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={clsx("locationArrow", className)}
     >
       <path
         id="Vector 1"

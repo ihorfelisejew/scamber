@@ -4,14 +4,47 @@ import logoSrc from "./logo.png";
 import { PhoneIcon } from "./images/phone-icon";
 import { LocationIcon } from "./images/location-icon";
 import { LocationArrowIcon } from "./images/location-arrow-icon";
+import { useState, useEffect, useRef } from "react";
 
 export function Header({ className }) {
+  const [carShowrooms, setCarShowrooms] = useState([]);
+  const [activeShowroom, setActiveShowroom] = useState("Івано-Франківськ");
+  const [isOpen, setIsOpen] = useState(false);
+  const locationsRef = useRef(null);
+
+  useEffect(() => {
+    fetch("http://scamber-api/api/car-showroom")
+      .then((response) => response.json())
+      .then((data) => {
+        setCarShowrooms(data);
+        setActiveShowroom(data[0]);
+        console.log(data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleChangeCity = (city) => {
+    toggleOpen();
+    setActiveShowroom(city);
+  };
+
+  const locationsStyle = {
+    height: isOpen ? "193px" : "0",
+    transition: `height 1s ease, opacity 0.5s ease, ${!isOpen && "padding 0s ease 0.5s"}`,
+    padding: isOpen ? "40px 10px 12px" : "0",
+    opacity: isOpen ? "1" : "0",
+  };
+
   return (
     <header>
       <div className="header__container">
         <div className="content">
           <div className="logo">
-            <Image src={logoSrc} />
+            <Image src={logoSrc} alt="logo" />
             <h1 className="logo__title">Scamber</h1>
           </div>
           <nav className="header__menu-block menu">
@@ -36,31 +69,45 @@ export function Header({ className }) {
                   Контакти
                 </a>
               </li>
-              <li className="menu__item">
-                <a href="#order__title" className="menu__link">
-                  Купити авто
-                </a>
-              </li>
             </ul>
           </nav>
-          <div class={clsx("header__contacts", className)}>
-            <div class="header__contacts-item">
+          <div className={clsx("header__contacts", className)}>
+            <div className="header__contacts-item">
               <PhoneIcon />
-              <a href="tel:+380681543521" class="header__contact-text">
+              <a href="tel:+380681543521" className="header__contact-text">
                 +380 68 154 35 21
               </a>
             </div>
-            <div class="header__contacts-item">
-              <button class="header__contact-more">
+            <div
+              className={clsx(
+                "header__contacts-item location-item ",
+                isOpen && "active",
+              )}
+            >
+              <button className="header__contact-more" onClick={toggleOpen}>
                 <LocationIcon />
-                <p class="header__contact-text">Івано-Франківськ</p>
-                <LocationArrowIcon />
+                <p className="header__contact-text">{activeShowroom}</p>
+                <LocationArrowIcon className={isOpen && "active"} />
               </button>
-            </div>
-            <div class="header__contacts-item">
-              <a href="pages/signIn.php" class="header__contact-sign-in">
-                Sign in
-              </a>
+              <div
+                ref={locationsRef}
+                className="not-visible-locations"
+                style={locationsStyle}
+              >
+                <div className="scrollable__block">
+                  {Object.entries(carShowrooms)
+                    .filter(([id]) => carShowrooms[id] != activeShowroom) // Фільтрація масиву, щоб відфільтрувати id === '0'
+                    .map(([id, city]) => (
+                      <button
+                        key={id}
+                        className="not-visible-location"
+                        onClick={() => handleChangeCity(city)}
+                      >
+                        {city}
+                      </button>
+                    ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

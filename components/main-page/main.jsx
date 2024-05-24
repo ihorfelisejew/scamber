@@ -1,5 +1,5 @@
 import Image from "next/image";
-import carSrc from "./main_car.png";
+import carSrc from "./images/main_car.png";
 
 export function Main() {
   return (
